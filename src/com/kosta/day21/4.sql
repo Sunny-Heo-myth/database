@@ -437,7 +437,7 @@ where deptno = 30);
 select *
 from emp join dept
 on emp.deptno = dept.deptno
-where sal > any(nb gyyyyyyyyyyyyyyyyy,m alter
+where sal > any(
 select e.sal
 from emp e join dept d
 on e.deptno = d.deptno
