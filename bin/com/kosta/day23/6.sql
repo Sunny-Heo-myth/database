@@ -799,6 +799,207 @@ year01 interval year(3) to month);
 
 create table dept01
 as 
+select *
+from emp
+where 1 = 0;
+
+select * from dept01;
+
 insert into dept
 (deptno, dname, loc)
 values (10, 'ACCOUNTING', 'NEW YORK');
+
+select * from dept03;
+
+insert into dept03
+values (20, 'RESEARCH', 'DALLAS');
+
+create table sam01
+(empno number(4),
+ename varchar2(10),
+job varchar(9),
+sal number(7, 2));
+
+insert into sam01 values (1000, 'APPLE', 'POLICE', 10000);
+insert into sam01 values (1010, 'BANANA', 'NURSE', 15000);
+insert into sam01 values (1020, 'ORANGE', 'DOCTOR', 25000);
+
+select * from sam01;
+
+insert into sam01
+values (1030, 'PINEAPPLE', 'ENGINEER', null);
+
+insert into sam01
+values (1040, 'PAPAYA', '', 50000);
+
+drop table dept02;
+
+create table dept02
+as
+select * from dept where 1=0;
+
+insert into dept02
+select * from dept;
+
+select * from dept02;
+
+insert into sam01
+select empno, ename, job, sal
+from emp
+where deptno = 10;
+
+select * from emp;
+
+create table emp_hir
+as
+select empno, ename, hiredate
+from emp
+where 1 = 0;
+
+drop table emp_hir;
+
+create table emp_mgr
+as
+select empno, ename, mgr
+from emp
+where 1 = 0;
+
+insert all
+into emp_hir values(empno, ename, hiredate)
+into emp_mgr values(empno, ename, mgr)
+select empno, ename, hiredate, mgr
+from emp
+where deptno = 20;
+
+select * from emp_hir;
+select * from emp_mgr;
+
+create table emp_sal
+as
+select empno, ename, sal
+from emp
+where 1 = 0;
+
+drop table emp_sal;
+
+insert all
+when hiredate > '1982/01/01' then
+into emp_hir
+values (empno, ename, hiredate)
+when sal > 2000 then
+into emp_sal values(empno, ename, sal)
+select empno, ename, hiredate, sal
+from emp;
+
+select * from emp_sal;
+select * from emp_hir;
+
+create table sales
+(sales_id number(4),
+week_id number(4),
+mon_sales number(8, 2),
+tue_sales number(8, 2),
+wed_sales number(8, 2),
+thu_sales number(8, 2),
+fri_sales number(8, 2));
+
+select * from sales;
+
+create table sales_data
+(sales_id number(4),
+week_id number(4),
+daily_id number(4),
+sales number(8, 2));
+
+select * from sales_data;
+
+insert into sales
+values(1001, 1, 200, 100, 300, 400, 500);
+
+insert into sales
+values(1002, 2, 100, 300, 200, 500, 350);
+
+insert all
+into sales_data values(sales_id, week_id, 1, mon_sales)
+into sales_data values(sales_id, week_id, 2, tue_sales)
+into sales_data values(sales_id, week_id, 3, wed_sales)
+into sales_data values(sales_id, week_id, 4, thu_sales)
+into sales_data values(sales_id, week_id, 5, fri_sales)
+select sales_id, week_id, mon_sales, 
+tue_sales, wed_sales, 
+thu_sales, fri_sales
+from sales;
+
+select * from sales_data;
+
+drop table sales;
+drop table sales_data;
+
+create table t1(
+t1c1 number(8),
+t1c2 number(8),
+t1c3 number(8),
+t1c4 number(8),
+t1c5 number(8))
+
+create table t2(
+t1c1 number(8),
+t1c2 number(8),
+t2c3 number(8),
+t2c4 number(8));
+
+insert into t1 values (999, 998, 0, 1, 2);
+insert into t1 values (999, 998, 3, 4, 5);
+
+insert all
+into t2 values (t1c1, t1c2, t1c3, 0)
+into t2 values (t1c1, t1c2, t1c4, 1)
+into t2 values (t1c1, t1c2, t1c5, 2)
+select t1c1, t1c2, t1c3, t1c4, t1c5
+from t1;
+
+select *
+from t2
+order by t2c3;
+
+update emp03
+set empno = 7777;
+
+select * from emp03
+
+create table emp01
+as
+select * from emp;
+
+update emp01
+set hiredate = sysdate;
+
+select * from emp01;
+
+update emp01
+set deptno = 30
+where deptno = 10;
+
+update emp01
+set sal = sal * 1.1
+where sal > 3000;
+
+update emp01
+set hiredate = sysdate
+where substr(hiredate, 1, 2) = '87';
+
+select * from sam01;
+
+update sam01
+set sal = sal - 5000
+where sal > 10000;
+
+update emp01
+set deptno = 20, job = 'MANAGER'
+where ename = 'SCOTT';
+
+update emp01
+set hiredate = sysdate, sal = 50, comm = 4000
+where ename = 'SMITH';
+
+select * from emp01;
