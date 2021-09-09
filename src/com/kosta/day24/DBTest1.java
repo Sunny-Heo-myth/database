@@ -9,7 +9,7 @@ import java.util.Properties;
 public class DBTest1 {
 
 	public static void main(String[] args) throws ClassNotFoundException, SQLException {
-		DBUtil.dbConnect();
+		f1();
 	}
 
 	private static void f2() {

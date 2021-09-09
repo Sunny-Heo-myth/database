@@ -2,6 +2,8 @@ package com.kosta.day24;
 
 import java.sql.*;
 
+import com.kosta.util.DBUtil;
+
 public class DBTest2 {
 
 	public static void main(String[] args) {

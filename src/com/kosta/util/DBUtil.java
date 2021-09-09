@@ -1,4 +1,4 @@
-package com.kosta.day24;
+package com.kosta.util;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
