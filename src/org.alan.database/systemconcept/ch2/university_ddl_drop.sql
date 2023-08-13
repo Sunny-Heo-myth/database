@@ -3,7 +3,7 @@
 drop table TAKES;
 drop table TEACHES;
 drop table SECTION;
-drop table PREREQ;
+##drop table PREREQ;
 drop table COURSE;
 drop table ADVISOR;
 drop table INSTRUCTOR;
