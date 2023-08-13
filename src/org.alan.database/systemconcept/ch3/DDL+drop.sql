@@ -115,18 +115,3 @@ create table prereq
 	 foreign key (course_id) references course (course_id) on delete cascade,
 	 foreign key (prereq_id) references course (course_id)
 	);
-
-create table grade_points
-    (grade			varchar(2),
-     points			numeric(2,1) check (points >= 0),
-     primary key (grade)
-    );
-
-## add foreign key constraints to takes table for grade from grade_points table
-SET foreign_key_checks = 0;
-alter table takes add constraint takes_grade_fkey
-    foreign key (grade) references grade_points (grade)## on delete set null;
-SET foreign_key_checks = 1;
-
-## delete foreign key constraints to takes table for grade from grade_points table
-alter table takes drop foreign key takes_grade_fkey;
