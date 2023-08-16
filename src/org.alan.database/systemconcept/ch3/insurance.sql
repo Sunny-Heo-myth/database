@@ -1,3 +1,6 @@
+create schema insurance;
+
+use insurance;
 
 create table person
 (

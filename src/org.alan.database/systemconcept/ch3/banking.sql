@@ -1,3 +1,7 @@
+create schema banking;
+
+use banking;
+
 create table branch
 (
     branch_name varchar(20) primary key,
