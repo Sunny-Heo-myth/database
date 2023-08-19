@@ -1,5 +1,4 @@
-## DML truncate
-
+## truncate all tables
 set FOREIGN_KEY_CHECKS = 0;
 truncate table TAKES;
 truncate table TEACHES;
