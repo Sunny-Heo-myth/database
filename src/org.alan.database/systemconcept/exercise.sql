@@ -293,7 +293,17 @@ where average.avg_salary > (select avg(salary) as average_salary
                             from company c,
                                  works w
                             where c.company_name = w.company_name
-                              and c.company_name = 'First Bank Corporation')
+                              and c.company_name = 'First Bank Corporation');
 
-# 3.10.a
+# 3.10.a Modify the database so that the employee whose ID is '12345' now lives in “Newtown”.
+update employee e
+set city = 'Newtown'
+where e.ID = '12345';
 
+# 3.10.b Give each manager of “First Bank Corporation” a 10 percent raise unless the salary becomes greater than $100000;
+# in such cases, give only a 3 percent raise.
+update employee e, manages m, works w
+set w.salary = IF(w.salary <= 90909, w.salary * 1.1, w.salary * 1.03)
+where e.ID = m.manager_id
+  and e.ID = w.ID
+  and w.company_name = 'First Bank Corporation';

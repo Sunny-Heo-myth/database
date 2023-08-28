@@ -1,4 +1,20 @@
-## University
+create schema university;
+
+use university;
+
+drop table if exists prereq;
+drop table if exists time_slot;
+drop table if exists advisor;
+drop table if exists takes;
+drop table if exists student;
+drop table if exists teaches;
+drop table if exists section;
+drop table if exists instructor;
+drop table if exists course;
+drop table if exists department;
+drop table if exists classroom;
+
+## new
 
 ## Time table
 create table TIME_SLOT(
@@ -106,4 +122,23 @@ create table TAKES(
                       PRIMARY KEY(ID, COURSE_ID, SEC_ID, SEMESTER, YEAR),
                       FOREIGN KEY(ID) REFERENCES STUDENT(ID) ON DELETE CASCADE,
                       FOREIGN KEY(COURSE_ID, SEC_ID, SEMESTER, YEAR) REFERENCES SECTION(COURSE_ID, SEC_ID, SEMESTER, YEAR) ON DELETE CASCADE
+);
+
+create table grade_points
+(
+    grade			varchar(2),
+    points			DECIMAL(2,1),
+    primary key (grade)
+);
+
+## add foreign key constraints to takes table for grade from grade_points table
+SET foreign_key_checks = 0;
+alter table takes add constraint takes_grade_fkey
+    foreign key (grade) references grade_points (grade) ## on delete set null;
+SET foreign_key_checks = 1;
+
+create table marks
+(
+    ID varchar(30) primary key,
+    score numeric(2)
 );
