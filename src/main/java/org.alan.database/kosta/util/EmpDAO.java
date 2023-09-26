@@ -1,4 +1,4 @@
-package com.kosta.day25;
+package org.alan.database.kosta.util;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -9,13 +9,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.kosta.util.DBUtil;
-import com.kosta.util.DateUtil;
+import org.alan.database.kosta.util.DateUtil;
 
 //DAO(Data Access Object)
 //Repository 
 public class EmpDAO {
 
-	// ¸ðµçÁ÷¿øÁ¶È¸
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¸
 	public List<EmployeeVO> selectAll() {
 		List<EmployeeVO> emplist = new ArrayList<>();
 		String sql = "select * from Employees";
@@ -37,7 +37,7 @@ public class EmpDAO {
 		return emplist;
 	}
 
-	// Æ¯Á¤ºÎ¼­ÀÇ Á÷¿øÁ¶È¸
+	// Æ¯ï¿½ï¿½ï¿½Î¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¸
 	public List<EmployeeVO> selectById(int deptid) {
 		List<EmployeeVO> emplist = new ArrayList<>();
 		String sql = "select * from Employees where department_id=?" ;
@@ -45,9 +45,9 @@ public class EmpDAO {
 		PreparedStatement st = null;
 		ResultSet rs = null;
 		try {
-			st = conn.prepareStatement(sql);//sql¹® ÁØºñÇÑ´Ù. 
-			st.setInt(1, deptid); //Ã¹¹øÂ°?¿¡ ºÎ¼­¹øÈ£¸¦ ³Ö¾î¶ó~
-			rs = st.executeQuery();//½ÇÇà
+			st = conn.prepareStatement(sql);//sqlï¿½ï¿½ ï¿½Øºï¿½ï¿½Ñ´ï¿½. 
+			st.setInt(1, deptid); //Ã¹ï¿½ï¿½Â°?ï¿½ï¿½ ï¿½Î¼ï¿½ï¿½ï¿½È£ï¿½ï¿½ ï¿½Ö¾ï¿½ï¿½~
+			rs = st.executeQuery();//ï¿½ï¿½ï¿½ï¿½
 			while (rs.next()) {
 				emplist.add(makeEmp(rs));
 			}
@@ -60,7 +60,7 @@ public class EmpDAO {
 		return emplist;
 	}
 
-	// salary°¡ Æ¯Á¤±Ý¾× ÀÌ»óÀÎ Á÷¿øµé Á¶È¸
+	// salaryï¿½ï¿½ Æ¯ï¿½ï¿½ï¿½Ý¾ï¿½ ï¿½Ì»ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¸
 	public List<EmployeeVO> selectBySalary(int sal) {
 		List<EmployeeVO> emplist = new ArrayList<>();
 		String sql = "select * from Employees where salary >= ?" ;
@@ -68,9 +68,9 @@ public class EmpDAO {
 		PreparedStatement st = null;
 		ResultSet rs = null;
 		try {
-			st = conn.prepareStatement(sql); //sql¹®¿¡ ?µµÀÖ¾î
-			st.setInt(1, sal);//Ã¹¹øÂ° ?¿¡ sal¸¦ ÇÒ´ç  
-			rs = st.executeQuery(); //sql¹® ½ÇÇà 
+			st = conn.prepareStatement(sql); //sqlï¿½ï¿½ï¿½ï¿½ ?ï¿½ï¿½ï¿½Ö¾ï¿½
+			st.setInt(1, sal);//Ã¹ï¿½ï¿½Â° ?ï¿½ï¿½ salï¿½ï¿½ ï¿½Ò´ï¿½  
+			rs = st.executeQuery(); //sqlï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ 
 			while (rs.next()) {
 				emplist.add(makeEmp(rs));
 			}
@@ -83,7 +83,7 @@ public class EmpDAO {
 		return emplist;
 	}
 
-	//job_id°¡ Æ¯Á¤°ªÀÎ Á÷¿øµé Á¶È¸ 
+	//job_idï¿½ï¿½ Æ¯ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¸ 
 	public List<EmployeeVO> selectByJob(String jobid) {
 		List<EmployeeVO> emplist = new ArrayList<>();
 		String sql = "select * from Employees where job_id = ? ";
@@ -91,8 +91,8 @@ public class EmpDAO {
 		PreparedStatement st = null;
 		ResultSet rs = null;
 		try {
-			st = conn.prepareStatement(sql); //sql¹®¿¡ ?°¡ÀÖ´Ù. 
-			st.setString(1, jobid); //Ã¹¹øÂ° ?¿¡ jobid°¡ setting 
+			st = conn.prepareStatement(sql); //sqlï¿½ï¿½ï¿½ï¿½ ?ï¿½ï¿½ï¿½Ö´ï¿½. 
+			st.setString(1, jobid); //Ã¹ï¿½ï¿½Â° ?ï¿½ï¿½ jobidï¿½ï¿½ setting 
 			rs = st.executeQuery();
 			while (rs.next()) {
 				emplist.add(makeEmp(rs));
@@ -105,7 +105,7 @@ public class EmpDAO {
 		}
 		return emplist;
 	}
-	// ºÎ¼­ÄÚµå, Á÷Ã¥, ±Þ¿©, ÀÔ»çÀÏ 
+	// ï¿½Î¼ï¿½ï¿½Úµï¿½, ï¿½ï¿½Ã¥, ï¿½Þ¿ï¿½, ï¿½Ô»ï¿½ï¿½ï¿½ 
 	public List<EmployeeVO> selectByCondition(int deptid, String jobid, int sal, String hdate) {
 		List<EmployeeVO> emplist = new ArrayList<>();
 		String sql = "select * from Employees "
@@ -117,7 +117,7 @@ public class EmpDAO {
 		PreparedStatement st = null;
 		ResultSet rs = null;
 		try {
-			st = conn.prepareStatement(sql); //sql¹®¿¡ ?°¡ÀÖ´Ù. 
+			st = conn.prepareStatement(sql); //sqlï¿½ï¿½ï¿½ï¿½ ?ï¿½ï¿½ï¿½Ö´ï¿½. 
 			st.setInt(1, deptid);  
 			st.setString(2, jobid);
 			st.setInt(3, sal);  
@@ -135,8 +135,8 @@ public class EmpDAO {
 		return emplist;
 	}
 	private EmployeeVO makeEmp(ResultSet rs) throws SQLException {
-		// DB°¡ »ç¿ëÇÏ´Â °´Ã¼¿Í JAVA°¡ »ç¿ë°¡ »ç¿ëÇÏ´Â °´Ã¼°¡ ´Ù¸£´Ù. ÀÚµ¿À¸·Î settingºÒ°¡
-		// °³¹ßÀÚ°¡ ResultSet¸¦ ÀÐ¾î¼­ ÀÚ¹ÙÀÇ °´Ã¼¿¡ settingÇØ¾ßÇÑ´Ù.
+		// DBï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½Ã¼ï¿½ï¿½ JAVAï¿½ï¿½ ï¿½ï¿½ë°¡ ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½Ù¸ï¿½ï¿½ï¿½. ï¿½Úµï¿½ï¿½ï¿½ï¿½ï¿½ settingï¿½Ò°ï¿½
+		// ï¿½ï¿½ï¿½ï¿½ï¿½Ú°ï¿½ ResultSetï¿½ï¿½ ï¿½Ð¾î¼­ ï¿½Ú¹ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼ï¿½ï¿½ settingï¿½Ø¾ï¿½ï¿½Ñ´ï¿½.
 		EmployeeVO emp = new EmployeeVO();
 		emp.setCommission_pct(rs.getDouble("Commission_pct"));
 		emp.setDepartment_id(rs.getInt("Department_id"));
@@ -152,6 +152,6 @@ public class EmpDAO {
 		return emp;
 	}
 
-	// Æ¯Á¤ºÎ¼­Á÷¿øµé Á¶È¸
+	// Æ¯ï¿½ï¿½ï¿½Î¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¸
 
 }

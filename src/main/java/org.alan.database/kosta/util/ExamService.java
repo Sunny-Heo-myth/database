@@ -1,12 +1,12 @@
-package com.kosta.day26;
+package org.alan.database.kosta.util;
 
 import java.util.List;
 
-import com.kosta.day25.EmpDTO5;
+import org.alan.database.kosta.day25.EmpDTO5;
 import com.kosta.day25.EmployeeVO;
 
 
-//1~10¹ø ¹®Á¦Ç®ÀÌ ¼­ºñ½º Á¦°øÇÑ´Ù.
+//1~10ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ç®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.
 //Controller->Service->DAO->DB
 public class ExamService {
 

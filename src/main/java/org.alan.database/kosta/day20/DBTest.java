@@ -1,4 +1,4 @@
-package com.kosta.day20;
+package org.alan.database.kosta.day20;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

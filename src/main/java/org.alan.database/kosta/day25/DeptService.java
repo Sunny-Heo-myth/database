@@ -1,4 +1,4 @@
-package com.kosta.day25;
+package org.alan.database.kosta.day25;
 
 import java.util.List;
 

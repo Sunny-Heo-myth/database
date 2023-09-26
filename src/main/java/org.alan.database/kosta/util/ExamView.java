@@ -1,22 +1,22 @@
-package com.kosta.day26;
+package org.alan.database.kosta.util;
 
 import java.util.List;
 
-import com.kosta.day25.EmpDTO5;
+import org.alan.database.kosta.day25.EmpDTO5;
 import com.kosta.day25.EmployeeVO;
 
 public class ExamView {
 
 	public static void print1(List<EmpDTO5> emplist) {
-		System.out.println("-----------1¹øÀÇ °á°ú-------------");
+		System.out.println("-----------1ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½-------------");
 	    for(EmpDTO5 emp:emplist) {
 	    	System.out.println(emp);
 	    }
 	}
 
 	public static void print2(List<EmployeeVO> emplist) {
-		System.out.println("-----------2¹øÀÇ °á°ú-------------");
-		System.out.println("Á÷¿ø¹øÈ£\t e-mail");
+		System.out.println("-----------2ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½-------------");
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È£\t e-mail");
 	    for(EmployeeVO emp:emplist) {
 	    	System.out.println(emp.getEmployee_id() +"\t" + emp.getEmail());
 	    }

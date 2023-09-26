@@ -1,4 +1,4 @@
-package com.kosta.day26;
+package org.alan.database.kosta.util;
 
 import java.util.Scanner;
 
@@ -8,36 +8,36 @@ public class ExamController {
 	
 	
 	public static void main(String[] args) {
-		//»ç¿ëÀÚ¿¡°Ô ÀÔ·Â¹Þ±â(½ÃÇè¹®Á¦¹øÈ£)
+		//ï¿½ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ ï¿½Ô·Â¹Þ±ï¿½(ï¿½ï¿½ï¿½è¹®ï¿½ï¿½ï¿½ï¿½È£)
 		Scanner sc = new Scanner(System.in);
 		while(true) {
-			System.out.print("1~10±îÁö¹øÈ£ÀÔ·Â(exit)>>");
+			System.out.print("1~10ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È£ï¿½Ô·ï¿½(exit)>>");
 			String inputStr = sc.next();
 			if(inputStr.equals("exit")) break;
 			switch (inputStr) {
 			case "1":f1();break;
 			case "2":f2();break;
 			case "3":f3();break;
-			default: System.out.println("Á¦°øµÇÁö¾Ê´Â ¹øÈ£ÀÓ");break;
+			default: System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê´ï¿½ ï¿½ï¿½È£ï¿½ï¿½");break;
 			}
 			
 		}
-		System.out.println("ÇÁ·Î±×·¥Á¾·á");
+		System.out.println("ï¿½ï¿½ï¿½Î±×·ï¿½ï¿½ï¿½ï¿½ï¿½");
 	}
 
 	private static void f3() {
-		System.out.println("3¹ø¹®Á¦Ç®ÀÌ");
+		System.out.println("3ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç®ï¿½ï¿½");
 		
 	}
 
 	private static void f2() {
-		System.out.println("2¹ø¹®Á¦Ç®ÀÌ");
+		System.out.println("2ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç®ï¿½ï¿½");
 		ExamView.print2(service.test2());
 		
 	}
 
 	private static void f1() {
-		System.out.println("1¹ø¹®Á¦Ç®ÀÌ");
+		System.out.println("1ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç®ï¿½ï¿½");
 		ExamView.print1(service.test1());
 	}
 

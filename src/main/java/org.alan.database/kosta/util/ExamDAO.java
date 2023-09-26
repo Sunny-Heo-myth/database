@@ -1,4 +1,4 @@
-package com.kosta.day26;
+package org.alan.database.kosta.util;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,19 +7,19 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.kosta.day25.EmpDTO5;
+import org.alan.database.kosta.day25.EmpDTO5;
 import com.kosta.day25.EmployeeVO;
 import com.kosta.util.DBUtil;
 
 public class ExamDAO {
 
 	/*
-	 * EMPLOYEES Å×ÀÌºí¿¡ ÀúÀåµÇ¾îÀÖ´Â Á÷¿øµéÀÇ EMPLOYEE_ID¿Í EMAILÀ» ´ÙÀ½ÀÇ Ãâ·Â°á°ú¿Í °°Àº ÇüÅÂ·Î ³ªÅ¸³»°í,
-	 *  EMPLOYEE_ID ¿À¸§Â÷¼øÀ¸·Î Á¤·ÄÇÏ½Ã¿À. 
-	 *  ÀÌ¸ÞÀÏ ÁÖ¼Ò´Â ¼Ò¹®ÀÚ¿¡ µÚ¿¡ '@samsung.com' ÀÌ ºÙ°í, ÄÃ·³¸íÀº e-mail ·Î ÇÑ´Ù.
+	 * EMPLOYEES ï¿½ï¿½ï¿½Ìºï¿½ ï¿½ï¿½ï¿½ï¿½Ç¾ï¿½ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ EMPLOYEE_IDï¿½ï¿½ EMAILï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Â°ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Â·ï¿½ ï¿½ï¿½Å¸ï¿½ï¿½ï¿½ï¿½,
+	 *  EMPLOYEE_ID ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï½Ã¿ï¿½. 
+	 *  ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½Ö¼Ò´ï¿½ ï¿½Ò¹ï¿½ï¿½Ú¿ï¿½ ï¿½Ú¿ï¿½ '@samsung.com' ï¿½ï¿½ ï¿½Ù°ï¿½, ï¿½Ã·ï¿½ï¿½ï¿½ï¿½ï¿½ e-mail ï¿½ï¿½ ï¿½Ñ´ï¿½.
 	 */
 	public List<EmployeeVO> test2() {
-		// ½ÃÇè2¹ø
+		// ï¿½ï¿½ï¿½ï¿½2ï¿½ï¿½
 		String sql=
 				"select EMPLOYEE_ID, lower(EMAIL)||'@samsung.com' \"e-mail\" "+
 				"from EMPLOYEES "+
@@ -45,7 +45,7 @@ public class ExamDAO {
 	
 	
 	public List<EmpDTO5> test1() {
-		// ½ÃÇè1¹ø
+		// ï¿½ï¿½ï¿½ï¿½1ï¿½ï¿½
 		String sql = " select employee_id, first_name, last_name, job_id, salary " 
 				+ " from  EMPLOYEES "
 				+ " where SALARY >= 10000" 

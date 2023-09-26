@@ -1,4 +1,4 @@
-package com.kosta.day24;
+package org.alan.database.kosta.day24;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
