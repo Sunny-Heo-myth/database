@@ -2,6 +2,10 @@ create schema insurance;
 
 use insurance;
 
+# 3.13
+# Write SQL DDL corresponding to the schema in Figure 3.17.
+# Make any reasonable assumptions about data types, and be sure to declare primary and foreign keys.
+
 create table person
 (
     driver_id varchar(30) primary key,
