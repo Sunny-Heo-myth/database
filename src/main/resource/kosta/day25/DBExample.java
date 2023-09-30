@@ -1,4 +1,4 @@
-package org.alan.database.kosta.day25;
+package kosta.day25;
 
 import java.sql.*;
 

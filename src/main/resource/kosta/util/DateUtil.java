@@ -1,4 +1,4 @@
-package org.alan.database.kosta.util;
+package kosta.util;
 
 import java.sql.Date;
 import java.text.ParseException;

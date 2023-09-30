@@ -1,4 +1,4 @@
-package org.alan.database.kosta.util;
+package kosta.util;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -6,10 +6,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.List;
-
-import com.kosta.util.DBUtil;
-import org.alan.database.kosta.util.DateUtil;
 
 //DAO(Data Access Object)
 //Repository 
@@ -105,7 +101,7 @@ public class EmpDAO {
 		}
 		return emplist;
 	}
-	// �μ��ڵ�, ��å, �޿�, �Ի��� 
+
 	public List<EmployeeVO> selectByCondition(int deptid, String jobid, int sal, String hdate) {
 		List<EmployeeVO> emplist = new ArrayList<>();
 		String sql = "select * from Employees "

@@ -1,4 +1,4 @@
-package org.alan.database.kosta.util;
+package kosta.util;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;

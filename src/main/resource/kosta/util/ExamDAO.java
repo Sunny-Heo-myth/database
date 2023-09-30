@@ -1,4 +1,4 @@
-package org.alan.database.kosta.util;
+package kosta.util;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.alan.database.kosta.day25.EmpDTO5;
+import kosta.day25.EmpDTO5;
 import com.kosta.day25.EmployeeVO;
 import com.kosta.util.DBUtil;
 
